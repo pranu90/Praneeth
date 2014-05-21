@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="storeApp" lang="en">
+<% include header %>
+<body>
+	<% include navbar %>
+<br />
+<br />
+<br />
+	<div class="container" 
+		ng-init="product = <%= JSON.stringify(product) %>">
+		<div class="page-header text-left">
+			<h1>Product Details</h1>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">{{product.Name}}</div>
+			<div class="panel-body">
+				<form>
+
+						<table class="table table-bordered table-hover">
+							<tbody style="text-align: left;">
+								<tr ng-repeat="(key, value) in product">
+									<th style="width: 150px;">{{key}}:</th>
+									<td>{{value}}<br></td>
+								</tr>
+								
+
+							</tbody>
+						</table>
+
+				</form>
+
+			</div>
+		</div>
+
+		<hr>
+
+		<% include footer %>
+	</div>
+</body>
+</html>
