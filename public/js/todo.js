@@ -7,8 +7,9 @@ storeApp.controller('CategoryCntrl', function ($scope) {
 	$scope.categories = [
 	  {text:'TV'},
 	  {text:'Refrigerator'},
-	  {text:'Nail Polish'},
-	  {text: 'Books'}];
+	  {text:'Nail Polish'}
+	  
+	  ];
 });
 
 

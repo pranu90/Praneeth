@@ -12,18 +12,29 @@
 	<div 
 		ng-init="productlist = <%= JSON.stringify(products) %>"
 		class="container">
+		
 		<div class="container">
-			<h4>Search: </h4><input type="text" class="form-control" ng-model="searched">
-			<h2><%=title%></h2>
-			<div>
+			<div ng-controller="CategoryCntrl" style = "width : 100px ; float: left; margin-right:100px">
+				
+				
+					<ul class="dropdown-menu" role="menu" 
+						aria-labelledby="dropdownMenu1" style = "display: block ; position: initial ; height: 200px">
+						<li style ="text-align: center"> <h4> Categories</h4></li>
+						<li style=" height:"  ng-repeat="category in categories" role="presentation"><a role="menuitem" tabindex="-1"
+							href="/category/{{category.text}}">{{category.text}}</a></li>						
+					</ul>
+				
+			</div>
+			<!--<h2><%=title%></h2>-->
+			<div style ="width: 900px ; float:left" >
 				<div class="panel panel-default">
 					<div class="panel-heading" class="animate-repeat col-xs-12"
 						ng-repeat="prod in productlist | filter:searched">
-						
-						<h4><a href="/product/{{prod.productid}}" class="text-left " >{{prod.Name}}</a></h4>
+						<a href="/product/{{prod.productid}}" class="text-left"> 
+						<h4>{{prod.Name}}</a></h4>
 						<div class="text-left ">{{prod.Category}}</div>
 						<div class="text-right ">${{prod.Price}}</div>
-						
+						</a>
 					</div>
 				</div>
 			</div>
